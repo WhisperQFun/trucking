@@ -130,6 +130,7 @@ namespace trucking {
 			this->Controls->Add(this->label1);
 			this->Name = L"Login";
 			this->Text = L"¬ход";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -137,5 +138,6 @@ namespace trucking {
 #pragma endregion
 	private: System::Void log_btn_Click(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void reg_bttn_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e);
 };
 }

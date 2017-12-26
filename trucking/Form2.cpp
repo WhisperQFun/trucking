@@ -43,7 +43,7 @@ System::Void trucking::Form2::button1_Click(System::Object ^ sender, System::Eve
 System::Void trucking::Form2::Form2_Load(System::Object ^ sender, System::EventArgs ^ e)
 {
 	
-	MessageBox::Show(is_update.ToString());
+	
 	if (is_update == true) 
 	{
 		this->button1->Enabled = false;

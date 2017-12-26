@@ -298,6 +298,7 @@ namespace trucking {
 			this->truck_db_id->Size = System::Drawing::Size(41, 13);
 			this->truck_db_id->TabIndex = 24;
 			this->truck_db_id->Text = L"label10";
+			this->truck_db_id->Visible = false;
 			// 
 			// clients_db_id
 			// 
@@ -307,6 +308,7 @@ namespace trucking {
 			this->clients_db_id->Size = System::Drawing::Size(41, 13);
 			this->clients_db_id->TabIndex = 25;
 			this->clients_db_id->Text = L"label11";
+			this->clients_db_id->Visible = false;
 			// 
 			// Form2
 			// 

@@ -21,20 +21,11 @@ System::Void trucking::Form1::button_load_Click(System::Object ^ sender, System:
 {
 	using namespace System::Collections::Generic;
 	List<Data_truck^>^ Data1 = gcnew List<Data_truck^>;
-	
-	String^ Colums_Name = "order_id INTEGER PRIMARY KEY, destination STRING, initial_point STRING, type_of_cargo STRING, type_of_car STRING, cost STRING, weight STRING, date STRING, user_id INTEGER, client_id INTEGER, inactive BOOLEAN";
-	String^ DB_name = "TRUCKING";
-	String^ Colums_Name_2 = "users_id INTEGER PRIMARY KEY, password STRING, login STRING, is_admin BOOLEAN";
-	String^ DB_name_2 = "USERS";
-	String^ DB_name_3 = "CLIENTS";
-	String^ Colums_Name_3 = "client_id INTEGER PRIMARY KEY, owner STRING, passport_series STRING, passport_number STRING";
 	String^ Selected_Values = "*";
 	int i = 0;
 	Database ^DB = gcnew Database();
 	DB->Open_DB();
-	DB->Create_Table_DB(DB_name, Colums_Name);
-	DB->Create_Table_DB(DB_name_2, Colums_Name_2);
-	DB->Create_Table_DB(DB_name_3, Colums_Name_3);
+	String^ DB_name = "TRUCKING";
 	SQLiteDataReader ^reader = DB->Select_Table_DB(Selected_Values, DB_name);
 	
 	DataTable^ Table = gcnew DataTable();
@@ -120,7 +111,7 @@ System::Void trucking::Form1::button_add_Click(System::Object ^ sender, System::
 System::Void trucking::Form1::bttn_edit_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
 	try {
-		Form2^ Frm_edit = gcnew Form2(true, this->dataGridView1->SelectedCells[0]->RowIndex+1,user_id1);
+		Form2^ Frm_edit = gcnew Form2(true, this->dataGridView1->SelectedCells[0]->RowIndex + 1,user_id1);
 
 		Frm_edit->Show();
 			
@@ -153,7 +144,7 @@ System::Void trucking::Form1::bttn_delete_Click(System::Object ^ sender, System:
 	String^ DB_name_3 = "CLIENTS";
 	Database ^DB = gcnew Database();
 	DB->Open_DB();
-	DB->Delete_row_db(DB_name_3,"client_id="+ this->dataGridView1->SelectedCells[0]->RowIndex + 1);
-	DB->Delete_row_db(DB_name, "order_id=" + this->dataGridView1->SelectedCells[0]->RowIndex + 1);
+	DB->Delete_row_db(DB_name_3,"client_id="+ (this->dataGridView1->SelectedCells[0]->RowIndex + 1));
+	DB->Delete_row_db(DB_name, "order_id=" + (this->dataGridView1->SelectedCells[0]->RowIndex + 1));
 	DB->Close();
 }
