@@ -74,7 +74,7 @@ namespace trucking
 				SQLiteCommand ^cmdSelect1 = db->CreateCommand();
 				
 				cmdSelect1->CommandText = "SELECT " + Table_Selected_Values + " FROM " + Table_Selected_Name + "WHERE " + selected_row_id + ";";
-				MessageBox::Show("SELECT " + Table_Selected_Values + " FROM " + Table_Selected_Name + " WHERE " + selected_row_id + ";");
+				//MessageBox::Show("SELECT " + Table_Selected_Values + " FROM " + Table_Selected_Name + " WHERE " + selected_row_id + ";");
 				SQLiteDataReader ^reader1 = cmdSelect1->ExecuteReader();
 
 
@@ -133,7 +133,7 @@ namespace trucking
 
 				SQLiteCommand ^cmdInsertValue = db->CreateCommand();
 				cmdInsertValue->CommandText = "DELETE FROM " + Table_Name + " WHERE " + delete_id + ";";
-				MessageBox::Show("DELETE FROM " + Table_Name + " WHERE " + delete_id + ";");
+				//MessageBox::Show("DELETE FROM " + Table_Name + " WHERE " + delete_id + ";");
 				cmdInsertValue->ExecuteNonQuery();
 
 

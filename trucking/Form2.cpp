@@ -27,8 +27,8 @@ System::Void trucking::Form2::button1_Click(System::Object ^ sender, System::Eve
 		i = 0;
 	}
 	client_id = DB->Insert_Table_DB(Inserted_Values_3, DB_name_3);
-	String^ Inserted_Values = "NULL, '" + textBox2->Text + "', '" + textBox3->Text + "', '" + textBox4->Text + "', '" + textBox5->Text + "', '" + textBox6->Text + "', '" + textBox7->Text + "', '" + DateTime::Today.ToString() + "', " + user2_id + ", " + client_id + ", " + i + "";
-	MessageBox::Show(Inserted_Values);
+	String^ Inserted_Values = "NULL, '" + textBox2->Text + "', '" + textBox3->Text + "', '" + textBox4->Text + "', '" + textBox5->Text + "', '" + textBox6->Text + "', '" + textBox7->Text + "', '" + DateTime::Now.ToString() + "', " + user2_id + ", " + client_id + ", " + i + "";
+	//MessageBox::Show(Inserted_Values);
 	
 
 	
@@ -110,7 +110,7 @@ System::Void trucking::Form2::button2_Click(System::Object ^ sender, System::Eve
 	{
 		i = 0;
 	}
-	DB->Update_Table_DB("TRUCKING","destination='"+ textBox2->Text+"',"+"initial_point='"+ textBox3->Text +"'," + "type_of_cargo='" + textBox4->Text + "'," + "type_of_car='" + textBox5->Text + "'," + "cost='" + textBox6->Text + "'," + "weight='" + textBox7->Text + "'," + "date='" + DateTime::Today.ToString() + "'," + "user_id='" + user2_id + "'," + "client_id='" + clients_db_id->Text + "'," + "inactive='" + i,"' WHERE order_id ="+truck_db_id->Text);
+	DB->Update_Table_DB("TRUCKING","destination='"+ textBox2->Text+"',"+"initial_point='"+ textBox3->Text +"'," + "type_of_cargo='" + textBox4->Text + "'," + "type_of_car='" + textBox5->Text + "'," + "cost='" + textBox6->Text + "'," + "weight='" + textBox7->Text + "'," + "date='" + DateTime::Now.ToString() + "'," + "user_id='" + user2_id + "'," + "client_id='" + clients_db_id->Text + "'," + "inactive='" + i,"' WHERE order_id ="+truck_db_id->Text);
 	DB->Update_Table_DB("CLIENTS","owner='" + textBox1->Text + "',"+"passport_series='" + textBox8->Text + "'," + "passport_number='" + textBox9->Text ,"' WHERE client_id =" + clients_db_id->Text);
 	DB->Close();
 
