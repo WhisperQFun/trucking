@@ -339,7 +339,7 @@ namespace trucking {
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
 			this->Name = L"Form2";
-			this->Text = L"Form2";
+			this->Text = L"Редактирование";
 			this->Load += gcnew System::EventHandler(this, &Form2::Form2_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

@@ -144,7 +144,7 @@ System::Void trucking::Form1::bttn_delete_Click(System::Object ^ sender, System:
 	String^ DB_name_3 = "CLIENTS";
 	Database ^DB = gcnew Database();
 	DB->Open_DB();
-	DB->Delete_row_db(DB_name_3,"client_id="+ (this->dataGridView1->SelectedCells[0]->RowIndex + 1));
-	DB->Delete_row_db(DB_name, "order_id=" + (this->dataGridView1->SelectedCells[0]->RowIndex + 1));
+	DB->Delete_row_db(DB_name_3,"client_id="+ (this->dataGridView1->SelectedCells[0]->Value));
+	DB->Delete_row_db(DB_name, "order_id=" + (this->dataGridView1->SelectedCells[0]->Value));
 	DB->Close();
 }

@@ -129,7 +129,7 @@ namespace trucking {
 			this->Controls->Add(this->button_load);
 			this->Controls->Add(this->dataGridView1);
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"Главная форма";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Form1::Form1_FormClosing);
 			this->Shown += gcnew System::EventHandler(this, &Form1::Form1_Shown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
