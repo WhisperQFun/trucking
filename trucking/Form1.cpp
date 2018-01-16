@@ -148,3 +148,30 @@ System::Void trucking::Form1::bttn_delete_Click(System::Object ^ sender, System:
 	DB->Delete_row_db(DB_name, "order_id=" + (this->dataGridView1->SelectedCells[0]->Value));
 	DB->Close();
 }
+
+System::Void trucking::Form1::report_bbtn_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	try {
+		using namespace System::IO;
+		StreamWriter^ writer = gcnew StreamWriter(Application::StartupPath + "\\rep.txt");
+		writer->WriteLine("Отчет по заказу под номером:" + this->dataGridView1->SelectedCells[0]->Value);
+		writer->WriteLine("Пункт назначения:" + this->dataGridView1->SelectedCells[1]->Value);
+		writer->WriteLine("Исходная точка:" + this->dataGridView1->SelectedCells[2]->Value);
+		writer->WriteLine("Тип груза:" + this->dataGridView1->SelectedCells[3]->Value);
+		writer->WriteLine("Тип машины:" + this->dataGridView1->SelectedCells[4]->Value);
+		writer->WriteLine("Стоимость:" + this->dataGridView1->SelectedCells[5]->Value);
+		writer->WriteLine("Вес:" + this->dataGridView1->SelectedCells[6]->Value);
+		writer->WriteLine("Дата:" + this->dataGridView1->SelectedCells[7]->Value);
+		writer->WriteLine("Номер пользователя:" + this->dataGridView1->SelectedCells[8]->Value);
+		writer->WriteLine("Номер клиента:" + this->dataGridView1->SelectedCells[9]->Value);
+		writer->WriteLine("Заказ действителен ?:" + this->dataGridView1->SelectedCells[10]->Value);
+		writer->Close();
+		MessageBox::Show("Успешно");
+
+
+	}
+	catch (Exception ^e)
+	{
+		
+	}
+}

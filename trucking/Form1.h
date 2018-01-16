@@ -45,6 +45,7 @@ namespace trucking {
 	private: System::Windows::Forms::Button^  button_add;
 	private: System::Windows::Forms::Button^  bttn_edit;
 	private: System::Windows::Forms::Button^  bttn_delete;
+	private: System::Windows::Forms::Button^  report_bbtn;
 
 	private:
 		/// <summary>
@@ -64,6 +65,7 @@ namespace trucking {
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->bttn_edit = (gcnew System::Windows::Forms::Button());
 			this->bttn_delete = (gcnew System::Windows::Forms::Button());
+			this->report_bbtn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -118,11 +120,22 @@ namespace trucking {
 			this->bttn_delete->UseVisualStyleBackColor = true;
 			this->bttn_delete->Click += gcnew System::EventHandler(this, &Form1::bttn_delete_Click);
 			// 
+			// report_bbtn
+			// 
+			this->report_bbtn->Location = System::Drawing::Point(365, 266);
+			this->report_bbtn->Name = L"report_bbtn";
+			this->report_bbtn->Size = System::Drawing::Size(186, 23);
+			this->report_bbtn->TabIndex = 5;
+			this->report_bbtn->Text = L"—формировать отчет";
+			this->report_bbtn->UseVisualStyleBackColor = true;
+			this->report_bbtn->Click += gcnew System::EventHandler(this, &Form1::report_bbtn_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(687, 387);
+			this->Controls->Add(this->report_bbtn);
 			this->Controls->Add(this->bttn_delete);
 			this->Controls->Add(this->bttn_edit);
 			this->Controls->Add(this->button_add);
@@ -143,5 +156,6 @@ namespace trucking {
 	private: System::Void Form1_Shown(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void Form1_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e);
 	private: System::Void bttn_delete_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void report_bbtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
